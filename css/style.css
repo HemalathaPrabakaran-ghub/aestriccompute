@@ -7,6 +7,69 @@
 }
 
 
+@keyframes neonGlow {
+   
+}
+
+/* Neon Gradient Animation */
+@keyframes neonBackground {
+    0% { background: linear-gradient(45deg, #003366, #0066cc); }
+    50% { background: linear-gradient(45deg, #0066cc, #003366); }
+    100% { background: linear-gradient(45deg, #003366, #0066cc); }
+}
+
+/* Dark Blue Background */
+.facts {
+    background-color: #001a33; /* Deep dark blue */
+    padding: 50px 0;
+}
+
+/* Styling for Each Box */
+.facts .col-lg-4 .bg-primary,
+.facts .col-lg-4 .bg-light {
+    border-radius: 30px !important; /* Ensuring fully rounded corners */
+    overflow: hidden; /* Makes sure child elements do not have sharp edges */
+    animation: neonGlow 2s infinite alternate, neonBackground 5s infinite alternate;
+    transition: transform 0.3s ease-in-out;
+    background: #004080; /* Blue base color */
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+}
+
+/* Hover Effect */
+.facts .col-lg-4:hover .bg-primary,
+.facts .col-lg-4:hover .bg-light {
+    transform: scale(1.05);
+}
+
+/* Inner Icon Circle */
+.facts .bg-white {
+    background: #001a33; /* Dark blue inner circle */
+    border: 2px solid #00aaff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text Colors */
+.facts h5, .facts h1 {
+    color: white;
+    margin: 0;
+}
+
+/* Ensure consistent padding & rounded edges */
+.facts .col-lg-4 {
+    padding: 15px;
+}
+
+
 
 .wave-text span {
     display: inline-block;
@@ -450,12 +513,12 @@ h6,
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark);
+    color: white;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #c1b1b1;
+    color: rgb(255, 255, 255);
 }
 
 .navbar-dark .navbar-brand h1 {
@@ -477,7 +540,7 @@ h6,
     .navbar-dark .navbar-nav .nav-link.show,
     .sticky-top.navbar-dark .navbar-nav .nav-link {
         padding: 10px 0;
-        color: var(--dark);
+        color: black;
     }
 
     .navbar-dark .navbar-brand h1 {
@@ -497,7 +560,7 @@ h6,
     
     .sticky-top.navbar-dark {
         position: fixed;
-        background: #FFFFFF;
+        background: black;
     }
 
     .navbar-dark .navbar-nav .nav-link::before {
