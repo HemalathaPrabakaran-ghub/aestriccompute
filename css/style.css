@@ -1,12 +1,324 @@
 /********** Template CSS **********/
 :root {
-    --primary: #04212c;
+    --primary: #ffffff;
     --secondary: #34AD54;
-    --light: #06A3DA;
+    --light: #f6fafb;
     --dark: #091E3E;
 }
 
 
+.wave-text span {
+    display: inline-block;
+    font-size: 4rem;
+    animation: wave 2s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.wave-text span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.wave-text span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.wave-text span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+  background-color: #202020;
+  font-family: Lato, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.box {
+    position: relative;
+    width: 30%;
+    height: 380px;
+    background-color: #273f87;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.box img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.box h4 {
+    color: whitesmoke;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+
+.box p {
+    color: #f9f1f1;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.box:hover .content {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.box:hover h4 {
+    color: #23272b;
+}
+
+.box:hover p {
+    color: #fff;
+}
+
+
+
+.holographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjusted for box size */
+    margin-bottom: 20px; /* Add spacing between boxes */
+}
+
+.holographic-card {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 400px;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.holographic-card h2 {
+    color: #0ff;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.holographic-card h4 {
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.holographic-card small {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.holographic-card .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        0deg, 
+        transparent, 
+        transparent 30%, 
+        rgba(0,255,255,0.3)
+    );
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.holographic-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,255,255,0.5);
+}
+
+.holographic-card:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+}
+
+.matrix-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    z-index: 2; /* Ensure it stays above the rain effect */
+  }
+  
+  .matrix-text {
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+    font-family: monospace;
+    position: relative;
+    text-shadow: 0 0 10px rgb(204, 219, 204), 0 0 20px rgb(238, 82, 82), 0 0 30px rgb(255, 0, 149);
+    z-index: 2; /* Ensure it stays above the rain effect */
+  }
+  
+  .matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: glitch 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-2px, -2px);
+  }
+  
+  .rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 0, 0.1) 0,
+      rgba(206, 211, 72, 0.2) 2px,
+      transparent 4px
+    );
+    animation: rain 10s linear infinite;
+    z-index: 1; /* Place it behind the text */
+  }
+  
+  /* Animation for the rain effect */
+  
+  
+  /* Glitch effect for the text */
+  @keyframes glitch {
+    0%, 100% {
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      transform: translate(0);
+    }
+    33% {
+      clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+      transform: translate(-5px, -5px);
+    }
+    66% {
+      clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+      transform: translate(5px, 5px);
+    }
+  }
+
+.neon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.neon-text {
+    font-size: 4rem; /* Adjust size */
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+    white-space: nowrap; /* Ensures single line */
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 4s infinite, glow 1.5s infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
+}
+
+.custom-icon {
+    color: navy; /* White icon color */
+    background-color: rgb(204, 227, 236); /* Dark blue background */
+    border-radius: 50%; /* Makes the background circular */
+    padding: 20px; /* Adjust padding to control the size of the circle */
+    border: 5px solid rgb(195, 232, 246); /* Dark blue border */
+}
+.custom-button {
+    background-color: rgb(204, 227, 236); /* Dark blue background */
+    border: 2px solid rgb(195, 232, 246); /* Dark blue border */
+    color: #0a0a0a; /* White text */
+    border-radius: 50px; /* Rounded corners */
+    padding: 12px 40px; /* Adjust padding for button size */
+    text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline */
+}
+
+.custom-button:hover {
+    background-color: #e9ecf3; /* Slightly lighter dark blue on hover */
+    border-color: #8996ba; /* Change border color on hover */
+}
 /*** Spinner ***/
 .spinner {
     width: 40px;
@@ -312,11 +624,53 @@ h6,
 
 /*** Service ***/
 .service-item {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    color: white;
+    text-shadow: 0 1px 0 #000;
     position: relative;
-    height: 300px;
-    padding: 0 30px;
-    transition: .5s;
+    overflow: hidden;
+    padding: 2rem;
+    text-align: center;
+  
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 5%,
+      #112 60%,
+      #213 95%
+    );
+  
+    border: solid 5px transparent;
+    border-radius: 1em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+  
+    background: 
+      var(--main-bg) padding-box,
+      var(--gradient-border) border-box,
+      var(--main-bg) border-box;
+  
+    background-position: center center;
+    animation: bg-spin 10s linear infinite;
 }
+@keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  .service-item:hover {
+    animation-play-state: paused;
+  }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
 
 .service-item .service-icon {
     margin-bottom: 30px;
@@ -325,7 +679,7 @@ h6,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--primary);
+    background: rgb(82, 1, 82);
     border-radius: 2px;
     transform: rotate(-45deg);
 }
@@ -449,12 +803,13 @@ h6,
     transition: .5s;
 }
 
-.team-item:hover .team-img img,
-.blog-item:hover .blog-img img {
-    transform: scale(1.15);
+.team-item:hover .team-img img {
+    transform: scale(1.1); /* Image zoom effect */
 }
 
-
+.team-item:hover .overlay {
+    opacity: 0.5; /* Dark overlay effect */
+}
 /*** Miscellaneous ***/
 @media (min-width: 991.98px) {
     .facts {
@@ -487,6 +842,7 @@ h6,
 
 @media (min-width: 767.98px) {
     .footer-about {
-        margin-bottom: -75px;
+        margin-bottom: 3px;
+        margin-top: auto;
     }
 }
