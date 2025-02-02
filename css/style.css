@@ -236,7 +236,7 @@ body {
     background: repeating-linear-gradient(
       0deg,
       rgba(0, 255, 0, 0.1) 0,
-      rgba(206, 211, 72, 0.2) 2px,
+      rgba(206, 211, 72, 0.2) 7px,
       transparent 4px
     );
     animation: rain 10s linear infinite;
@@ -270,12 +270,11 @@ body {
 
 
 .neon-text {
-    font-size: 4rem; /* Adjust size */
+    font-size: 4em; /* Adjust size */
     color: #fff;
     font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
     animation: glow 1.5s infinite alternate;
-    white-space: nowrap; /* Ensures single line */
     overflow: hidden;
     display: inline-block;
     animation: typing 4s infinite, glow 1.5s infinite alternate;
