@@ -120,15 +120,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; /* Adjusted for box size */
-    margin-bottom: 20px; /* Add spacing between boxes */
+    height: 220px; /* Adjusted for box size */
+    margin-bottom: 10px; /* Add spacing between boxes */
 }
 
 .holographic-card {
     width: 100%;
     max-width: 400px;
     height: 100%;
-    max-height: 400px;
+    max-height: 200px;
     background: #111;
     display: flex;
     flex-direction: column;
@@ -646,7 +646,7 @@ h6,
   
     border: solid 5px transparent;
     border-radius: 1em;
-    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    --gradient-border: conic-gradient(from var(--border-angle), rgb(176, 135, 198) 25%, #08f, #f03 99%, transparent);
   
     background: 
       var(--main-bg) padding-box,
@@ -654,7 +654,6 @@ h6,
       var(--main-bg) border-box;
   
     background-position: center center;
-    animation: bg-spin 10s linear infinite;
 }
 @keyframes bg-spin {
     to {
@@ -828,8 +827,9 @@ h6,
 }
 
 .bg-header {
-    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../images/main2.png) center center no-repeat;
     background-size: cover;
+    height: 650px;
 }
 
 .link-animated a {
